@@ -161,7 +161,7 @@ public class WsDiscoveryConstants {
      * restarted. See Appendix I - Application Sequencing in the WS-Discovery 
      * specifiction for details.
      */
-    public final static long instanceId = new Date().getTime(); 
+    public final static long instanceId = (new Date().getTime()) & 0x7FFFFFFFl;
     
     /**
      * Sequence ID must be unique within each instance. See Appendix I - 
