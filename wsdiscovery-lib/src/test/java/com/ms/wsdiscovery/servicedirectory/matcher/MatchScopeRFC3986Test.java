@@ -49,7 +49,7 @@ public class MatchScopeRFC3986Test {
     }
 
     /**
-     * Test of matchScope method, of class MatchScopeRFC2396.
+     * Test of matchScope method, of class MatchScopeRFC3986.
      */
     @Test
     public void testMatchScope() {
@@ -74,11 +74,11 @@ public class MatchScopeRFC3986Test {
     }
 
     /**
-     * Test of matchURIByRFC2396 method, of class MatchScopeRFC2396.
+     * Test of matchURIByRFC3986 method, of class MatchScopeRFC3986.
      */
     @Test
     public void testMatchURIByRFC3986() throws URISyntaxException {
-        System.out.println("matchURIByRFC2396");
+        System.out.println("matchURIByRFC3986");
 
         URI target = new URI("http://www.examples.com/a/b");
         URI probe = new URI("http://www.examples.com/a/b");
