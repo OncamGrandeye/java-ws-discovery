@@ -53,6 +53,30 @@ public enum MatchBy {
      */
     RFC2396("http://schemas.xmlsoap.org/ws/2005/04/discovery/rfc2396", new MatchScopeRFC2396()),
     /**
+     * From the OASIS WS-Discovery Specification Version 1.1:
+     * Using a case-insensitive comparison,
+     * <li>The scheme of S1 and S2 is the same and</li>
+     * <li>The authority of S1 and S2 is the same and</li>
+     * <p>
+     * Sheme-Based Normalization (refer to RFC3986 for description)
+     * <p>
+     * Using a case-sensitive comparison,
+     * <li>The percent decoded normalized path_segments of S1 is a
+     *      segment-wise (not string) prefix of the percent decoded
+     *      normalized path_segments of S2</li>
+     * All other components (e.g., query and fragment) are explicitly excluded from comparision.
+     * <p>
+     * Note: this matching rule does NOT test whether the string representation of S1 is
+     * a prefix of the string representation of S2. For example,
+     * "http://example.com/abc" matches "http://example.com/abc/def" using this rule
+     * but "http://example.com/a" does not.
+     * <p>
+     * Note: although this is a requirement for WS-Disovery 1.1, it is included
+     * to support the ONVIF Specification which requires the WS-Discovery Draft
+     * (pre 1.0) but supersedes the RFC2396 requirement with RFC3986.
+     */
+    RFC3986("http://schemas.xmlsoap.org/ws/2005/04/discovery/rfc3986", new MatchScopeRFC3986()),
+    /**
      * From the WS-Discovery Specification Draft, 2005:<p>
      * Using a case-insensitive comparison, the scheme of S1 and S2 is "uuid" and each of the 
      * unsigned integer fields in S1 is equal to the corresponding field in S2, or equivalently, the 
